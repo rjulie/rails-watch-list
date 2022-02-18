@@ -1,15 +1,5 @@
 <h1><%= @list.name %></h1>
 
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li>
-      <p><%= bookmark.movie.title %></p>
-      <p><%= bookmark.comment %></p>
-    </li>
-  <% end %>
-</ul>
-
-
   <div>
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
